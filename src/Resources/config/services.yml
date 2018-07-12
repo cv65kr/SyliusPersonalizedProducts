@@ -1,0 +1,28 @@
+parameters:
+  sylius_prediction_event_host: 127.0.0.1
+  sylius_prediction_event_port: 7070
+  sylius_prediction_engine_host: 127.0.0.1
+  sylius_prediction_engine_port: 8192
+  sylius_prediction_key: ''
+
+services:
+  sylius_personalized_products.factory.connect:
+    class: cv65kr\SyliusPersonalizedProducts\Factory\PredictionConnectFactory
+    arguments:
+      - "%sylius_prediction_event_host%"
+      - "%sylius_prediction_event_port%"
+      - "%sylius_prediction_engine_host%"
+      - "%sylius_prediction_engine_port%"
+      - "%sylius_prediction_key%"
+
+  sylius_personalized_products.services.populate_products:
+    class: cv65kr\SyliusPersonalizedProducts\Services\PopulateProducts
+    arguments:
+      - "@sylius_personalized_products.factory.connect"
+
+  sylius_personalized_products.command.populate_command:
+    class: cv65kr\SyliusPersonalizedProducts\Command\PopulateCommand
+    arguments:
+      - "@sylius_personalized_products.services.populate_products"
+    tags:
+      - { name: "console.command" }
