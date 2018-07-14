@@ -9,7 +9,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * @author Kajetan Kołtuniak <kajetan@koltuniak.com>
  */
-interface PopulateProductsInterface
+interface PopulateCustomersInterface
 {
     /**
      * @param OutputInterface $output

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace cv65kr\SyliusPersonalizedProducts\Command;
 
+use cv65kr\SyliusPersonalizedProducts\Services\PopulateCustomersInterface;
 use cv65kr\SyliusPersonalizedProducts\Services\PopulateProductsInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -20,14 +21,23 @@ final class PopulateCommand extends Command
     private $populateProducts;
 
     /**
+     * @var PopulateCustomersInterface
+     */
+    private $populateCustomers;
+
+    /**
      * PopulateCommand constructor.
      *
      * @param PopulateProductsInterface $populateProducts
+     * @param PopulateCustomersInterface $populateCustomers
      */
-    public function __construct(PopulateProductsInterface $populateProducts)
-    {
+    public function __construct(
+        PopulateProductsInterface $populateProducts,
+        PopulateCustomersInterface $populateCustomers
+    ) {
         parent::__construct();
         $this->populateProducts = $populateProducts;
+        $this->populateCustomers = $populateCustomers;
     }
 
     protected function configure(): void
@@ -41,6 +51,7 @@ final class PopulateCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output): void
     {
+        $this->populateCustomers->populate($output);
         $this->populateProducts->populate($output);
     }
 }

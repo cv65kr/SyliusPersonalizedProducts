@@ -66,12 +66,12 @@ final class PredictionConnectFactory
     public function getEventClient(): EventClient
     {
         $host = \sprintf(
-            'http://%s:%d',
+            '%s:%d',
             $this->eventHost,
             $this->eventPort
         );
 
-        return new EventClient($host, $this->predictionKey);
+        return new EventClient($this->predictionKey, $host);
     }
 
     /**
@@ -80,7 +80,7 @@ final class PredictionConnectFactory
     public function getEngineClient(): EngineClient
     {
         $host = \sprintf(
-            'http://%s:%d',
+            '%s:%d',
             $this->engineHost,
             $this->enginePort
         );

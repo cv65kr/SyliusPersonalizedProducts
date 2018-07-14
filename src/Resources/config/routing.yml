@@ -1,0 +1,7 @@
+sylius_personalized_products_controller:
+    path: /personalized-products
+    methods: [GET]
+    defaults:
+        _controller: sylius_personalized_products.controller.personalized_products_controller
+        limit: 10
+        template: "@SyliusPersonalizedProductsPlugin/products.html.twig"
