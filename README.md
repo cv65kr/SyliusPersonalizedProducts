@@ -129,7 +129,7 @@ Create sample data for training and import them by:
 pio import --appid 1 --input data-sample.json
 ```
 
-**Note:** Example sample file: https://gist.githubusercontent.com/vaghawan/0a5fb8ddb85e03631dd500d7c8f0677d/raw/17487437dd8269588d9dd1ac859b129a43842ba5/data-sample.json
+**Note:** Example sample file, You need modify this file: https://gist.githubusercontent.com/vaghawan/0a5fb8ddb85e03631dd500d7c8f0677d/raw/17487437dd8269588d9dd1ac859b129a43842ba5/data-sample.json
 
 Next run:
 ```bash
