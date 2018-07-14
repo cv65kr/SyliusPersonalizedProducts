@@ -1,3 +1,5 @@
+# Sylius Personalized Products Plugin
+
 ## Overview
 
 I used [Apache PredictionIO](http://predictionio.apache.org/index.html) to create plugin, which shows personalize recommended products, based on watched products.
