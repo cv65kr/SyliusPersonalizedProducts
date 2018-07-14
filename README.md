@@ -7,7 +7,7 @@ I used [Apache PredictionIO](http://predictionio.apache.org/index.html) to creat
 ### Sylius
 
 ```bash
-composer require cv65kr/SyliusPersonalizedProducts
+composer require cv65kr/sylius-personalized-products
 ```
 
 Add plugin dependencies to your AppKernel.php file:

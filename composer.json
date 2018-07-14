@@ -1,5 +1,5 @@
 {
-    "name": "cv65kr/SyliusPersonalizedProducts",
+    "name": "cv65kr/sylius-personalized-products",
     "type": "sylius-plugin",
     "description": "Personalized products, choices by machine learning (Prediction IO) for Sylius.",
     "license": "MIT",
